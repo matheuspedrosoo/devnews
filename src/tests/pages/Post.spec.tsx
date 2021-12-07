@@ -36,7 +36,7 @@ describe('Post page', () => {
       getByUID: jest.fn().mockResolvedValueOnce({
         data: {
           title: [{ type: 'heading', text: 'My new Post' }],
-          content: [{ type: 'paragraph', text: '<p>Post content</p>' }],
+          content: [{ type: 'paragraph', text: 'Post content' }],
         },
         last_publication_date: '12-25-2021',
       }),
