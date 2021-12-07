@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "src/tests/pages/Posts.spectsx"  ],
   "exclude": [
     "node_modules"
   ]

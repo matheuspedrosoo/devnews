@@ -12,7 +12,7 @@ interface PostProps {
     slug: string;
     title: string;
     content: string;
-    updateAt: string;
+    updatedAt: string;
   };
 }
 
@@ -25,12 +25,13 @@ export default function Post({ post }: PostProps) {
 
   return (
     <>
-      <SEO title={`Post ${router.query.id}`} />
+      {/* <SEO title={`Post ${router.query.id}`} /> */}
+      <SEO title={`Post`} />
 
       <main className={styles.container}>
         <article className={styles.post}>
           <h1>{post.title}</h1>
-          <time>{post.updateAt}</time>
+          <time>{post.updatedAt}</time>
           <div
             className={styles.content}
             dangerouslySetInnerHTML={{ __html: post.content }}
@@ -59,7 +60,7 @@ export const getStaticProps: GetStaticProps = async context => {
     slug,
     title: RichText.asText(response.data.title),
     content: RichText.asText(response.data.content),
-    updateAt: new Date(response.last_publication_date).toLocaleDateString(
+    updatedAt: new Date(response.last_publication_date).toLocaleDateString(
       'pt-BR',
       {
         day: '2-digit',
